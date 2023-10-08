@@ -1,0 +1,228 @@
+/* Reset some default styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the header */
+header {
+    background-color: #FFFC00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.1); /* Add a shadow */
+}
+
+/* Style the left section of the header */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    width: 40px; /* Adjust the size of your logo as needed */
+    margin-right: 10px;
+}
+
+.website-name {
+    font-weight: bold;
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #333; /* Change the font color to a darker shade */
+}
+
+/* Style the center section of the header */
+.header-center {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Adjust the font size for the input field */
+}
+
+.search-icon {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust the font size for the button */
+}
+
+/* Style the right section of the header */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-links {
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.header-links li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.header-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.header-links a:hover {
+    color: #FFFC00; /* Change link color on hover */
+    transition: color 0.3s ease; /* Add smooth color transition */
+}
+
+/* Style the profile icon (replace with your own icon) */
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; /* Increase the font size for the icon */
+    color: #FFFC00; /* Change the icon color to match the header background */
+    cursor: pointer;
+}
+
+main h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.card {
+    background-color: #fff;
+    box-shadow:  0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    width: calc(25% - 10px);
+    max-width: 400px;
+    display: inline-block;
+    vertical-align: top;
+}
+.card:last-child {
+    margin-right: 0; /* Remove margin from the last card in each row */
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: calc(50% - 10px); /* Two cards per row on smaller screens */
+    }
+}
+
+.card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    color: #333;
+}
+.card a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+.card-icons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.card-icons i {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Hover effect for icons */
+.card-icons i:hover {
+    color: #007BFF;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.copyright {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* Style the notification container */
+.notification {
+    position: relative;
+    display: inline-block; 
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Style the message icon */
+.message-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Set to relative to position the notification badge */
+}
+
+.message-icon i {
+    color: #fff;
+    font-size: 20px;
+}
+
+/* Style the notification badge */
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: 1px;
+    background-color: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
