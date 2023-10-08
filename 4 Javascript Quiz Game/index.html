@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Quiz Game</title>
+</head>
+<body>
+                        <div id="output"></div>
+                        <div id="score"></div>
+      <script type="text/javascript">
+          var quiz = [{
+                   q: "Who is the PM of India?",
+                   a: "Narendra Modi",
+                   b: "Rahul Gandhi",
+                   c: "Manmohan Singh",
+                   d: "kejriwal",
+                   answer: "a"
+          }, {
+            q: "National Bird Of India?",
+            a : "Pigeon",
+            b: "Dove",
+            c: "Peacock",
+            d: "None",
+            answer : "c"
+          }
+          , {
+            q: "National Animal Of India?",
+            a : "Cow",
+            b: "Dog",
+            c: "Cat",
+            d: "Tiger",
+            answer : "d"
+          }
+        ];
+       var output = " ";
+       var score = 0;
+       for(let i=0; i < quiz.length ; i++ ) {
+            let question = quiz[i].q;
+            let optionList = "a) "+quiz[i].a + " b) "+quiz[i].b+ " c) "+quiz[i].c+ " d) "+quiz[i].d;
+            var userAnswer = prompt(question+"\n"+optionList);
+            var originalAnswer = quiz[i].answer;
+            
+              if(userAnswer!=null){
+                   userAnswer = userAnswer.toLowerCase();
+                     if(userAnswer==originalAnswer){
+                         score++;
+                        alert("Right Answer ");
+                     } else {
+                        alert("Wrong Answer ");
+                     }
+                     
+              } else {
+                  
+              }
+    
+       }   
+            document.getElementById("output").innerHTML = output;
+             document.getElementById("score").innerHTML = "Score:- "+score;
+      </script>
+</body>
+</html>
