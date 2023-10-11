@@ -1,0 +1,161 @@
+/* Reset some default styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style the header */
+header {
+    background-color: #FFFC00;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.1); /* Add a shadow */
+}
+
+/* Style the left section of the header */
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left img {
+    width: 40px; /* Adjust the size of your logo as needed */
+    margin-right: 10px;
+}
+
+.website-name {
+    font-weight: bold;
+    font-size: 24px; /* Adjust the font size as needed */
+    color: #333; /* Change the font color to a darker shade */
+}
+
+/* Style the center section of the header */
+.header-center {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.header-center input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Adjust the font size for the input field */
+}
+
+.search-icon {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust the font size for the button */
+}
+
+/* Style the right section of the header */
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-links {
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.header-links li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.header-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.header-links a:hover {
+    color: #FFFC00; /* Change link color on hover */
+    transition: color 0.3s ease; /* Add smooth color transition */
+}
+
+/* Style the profile icon (replace with your own icon) */
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    border-radius: 50%;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px; /* Increase the font size for the icon */
+    color: #FFFC00; /* Change the icon color to match the header background */
+    cursor: pointer;
+}
+.form-heading {
+    margin-top: 15px;
+    color: #333;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+/* Center the login form */
+.login-form {
+    border: 1px solid #333;
+    max-width: 400px; /* Set a maximum width for the form */
+    margin: 0 auto; /* Horizontally center the form */
+    margin-top: 20px; /* Add some top margin for spacing */
+    padding: 20px; /* Add padding to the form container */
+}
+.form-body {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: center;
+}
+.form-element label {
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+}
+.form-element {
+    padding-bottom: 8px;
+}
+.form-element input {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px; /* Adjust the font size for the input field */
+}
+.submit_button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px; /* Adjust the font size for the button */
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.copyright {
+    font-size: 14px;
+    font-weight: bold;
+}
