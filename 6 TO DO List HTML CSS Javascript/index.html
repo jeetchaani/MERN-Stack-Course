@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+       <header>
+             <div class="main-container">
+                   <div class="left-part">
+                         <img 
+                         src="https://teja8.kuikr.com/module_assets/images/quikr_logo.png" 
+                         alt="logo">
+                         <h2>LogoText</h2>
+                   </div>
+                   <div class="right-menu">
+                        <ul class="menu-list">
+                            <li>Login</li>
+                            <li>Register</li>
+                            <li>About</li>
+                        </ul>
+                        <div class="profile-icon">
+                            <i class="material-icons">dehaze</i>
+                        </div>
+                   </div>
+             </div>
+       </header>
+       <main>
+             <h2 class="main-heading">To Do List</h2>  
+             <div class="add-container">
+                   <input type="text" placeholder="enter you want to add.." id="text-data">
+                   <button id="add-btn">Add</button>
+                   <ul id="todo-list">
+                
+                   </ul> 
+             </div> 
+               
+       </main>
+       <footer>
+
+       </footer>
+       <script type="text/javascript">
+                
+                 //array list
+                 var arrayItems = [];
+                
+                //javascript for add btn
+                var addBtn = document.getElementById('add-btn');
+                
+                addBtn.addEventListener('click',() => {
+                    var textData = document.getElementById('text-data').value;
+                    if(textData!="")
+                    {
+                     arrayItems = [...arrayItems,textData];
+                     //clear before items
+                     //const clearItem = document.getElementById('todo-list');
+                     const parentElement = document.getElementById('todo-list');
+                     parentElement.innerHTML = '';
+                     //load this array
+                     arrayItems.map((item,index) => {
+                            const listItem = document.createElement('li');
+                            listItem.className = 'list-item';
+                            listItem.id = 'item'+index;
+                            listItem.textContent = item;
+                            const deleteButton = document.createElement("button");
+                            deleteButton.textContent = "Delete";
+                            deleteButton.className = 'list-btn';
+                            var delFun = `deleteItem(${index})`;
+                            deleteButton.setAttribute('onclick',delFun);
+                            listItem.appendChild(deleteButton);
+                            parentElement.appendChild(listItem);
+                     
+                     });
+                     document.getElementById('text-data').value = "";
+                    }
+                });
+                  function deleteItem(id) {
+                    //remove node
+                    var parentPart = document.getElementById('todo-list');
+                    var childPart = document.getElementById('item'+id);
+                    parentPart.removeChild(childPart);
+                    //remove from array
+                    arrayItems.splice(id);
+                  } 
+       </script>
+</body>
+</html>
