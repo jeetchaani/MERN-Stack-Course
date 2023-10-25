@@ -1,0 +1,16 @@
+.item-list li{
+    color: #333;
+    font-size: 30px;
+    padding: 10px;
+}
+.delete-item {
+    height: 35px;
+    width: 35px;
+    font-size: 25px;
+    text-align: center;
+    display: inline-block;
+    color: aliceblue;
+    background-color: crimson;
+    cursor: pointer;
+    border-radius: 50%;
+}
