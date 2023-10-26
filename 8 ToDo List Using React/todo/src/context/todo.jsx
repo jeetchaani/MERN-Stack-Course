@@ -14,8 +14,12 @@ const todoData = () => {
 const TodoProvider = (props) => {
   const [title, setTitle] = useState("");
   const [task, setTask] = useState(todoData());
+  const [editStatus, seteditStatus] = useState(false);
+  const [editId, seteditId] = useState(0);
   return (
-    <TodoContext.Provider value={{ title, setTitle, task, setTask }}>
+    <TodoContext.Provider
+      value={{ title, setTitle, task, setTask, editStatus, seteditStatus, editId, seteditId }}
+    >
       {props.children}
     </TodoContext.Provider>
   );

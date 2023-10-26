@@ -1,9 +1,18 @@
 import React, { useEffect } from "react";
 import { useTodo } from "../../context/todo";
-import './main.css';
+import "./main.css";
 export default function Main() {
   const state = useTodo();
-  const { title, setTitle, task, setTask } = state;
+  const {
+    title,
+    setTitle,
+    task,
+    setTask,
+    editStatus,
+    seteditStatus,
+    editId,
+    seteditId,
+  } = state;
   const addTodo = () => {
     //check for empty
     if (title !== "") {
@@ -14,10 +23,38 @@ export default function Main() {
     }
   };
   const deleteTodo = (id) => {
-    const updateTodo = task.filter((currItem) =>{
-      return currItem.date!==id;
+    const updateTodo = task.filter((currItem) => {
+      return currItem.date !== id;
     });
     setTask(updateTodo);
+  };
+  const editTodo = (id) => {
+    //change the button name
+    seteditStatus(true);
+    //hold id
+    seteditId(id);
+    //copy data to input field
+    let editText = task.find((textItem) => {
+      return textItem.date === id;
+    });
+    setTitle(editText.title);
+  };
+  const editAction = () => {
+    //update data
+    if(title!=="") {
+      setTask(
+        task.map((currentItem) => {
+          if (currentItem.date === editId) {
+            return { ...currentItem, title: title };
+          }
+          return currentItem;
+        })
+      );
+    }
+    //empty text box
+     setTitle("");
+    //change edit button
+    seteditStatus(false);
   };
   useEffect(() => {
     localStorage.setItem("todo", JSON.stringify(task));
@@ -29,12 +66,26 @@ export default function Main() {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <button onClick={addTodo}>Add</button>
+      {editStatus === false ? (
+        <button onClick={addTodo}>Add</button>
+      ) : (
+        <button onClick={editAction}>Edit</button>
+      )}
+
       <ul className="item-list">
         {task.map((item, index) => {
           return (
             <li key={index}>
-              {item.title} <span onClick={()=>deleteTodo(item.date)} className="delete-item">-</span>
+              {item.title}
+              <span
+                onClick={() => deleteTodo(item.date)}
+                className="delete-item"
+              >
+                -
+              </span>
+              <span className="edit-item" onClick={() => editTodo(item.date)}>
+                Edit
+              </span>
             </li>
           );
         })}
