@@ -1,9 +1,40 @@
-.item-list li{
+/* Center the input field */
+div {
+    text-align: center; /* Center the contents of the 'div' element */
+  }
+  
+  /* Style the input field */
+  input[type="text"] {
+    width: 80%; /* Set the input field width to 80% of the parent element */
+    padding: 10px;
+    font-size: 18px;
+    margin-right: 10px; /* Add right margin to create space between input and button */
+
+  }
+  
+  /* Style the button */
+  button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Center the list */
+  .item-list {
+    text-align: center; /* Center the contents of the 'item-list' element */
+  }
+  
+  .item-list li {
     color: #333;
     font-size: 30px;
     padding: 10px;
-}
-.delete-item {
+  }
+  
+  .delete-item {
     height: 35px;
     width: 35px;
     font-size: 25px;
@@ -13,9 +44,10 @@
     background-color: crimson;
     cursor: pointer;
     border-radius: 50%;
-}
-.edit-item {
+  }
+  
+  .edit-item {
     padding-left: 18px;
     cursor: pointer;
     color: rgb(106, 106, 245);
-}
+  }  

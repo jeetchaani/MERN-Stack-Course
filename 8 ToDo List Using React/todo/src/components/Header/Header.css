@@ -1,0 +1,29 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: yellow;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px;
+}
+
+.header-title {
+    font-size: 24px;
+    color: #40E0D0;
+}
+
+.header-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.header-link {
+    margin-right: 20px;
+}
+
+.header-link a {
+    text-decoration: none;
+    color: #40E0D0;
+}
